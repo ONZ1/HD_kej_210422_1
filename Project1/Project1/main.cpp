@@ -21,7 +21,7 @@ char* AppData() {
 	for (int i = 0; i < NUM; i++)
 	{
 		char c = 0;
-		printf("a~c 값을 입력해주세요. 그 외를 입력하면 프로그램이 종료됩니다.\n");
+		printf("\na~c 값을 입력해주세요. 그 외를 입력하면 프로그램이 종료됩니다.\n%d번째 입력: ", i + 1);
 
 		fseek(stdin, 0, SEEK_END);
 		scanf_s("%c", &c);
@@ -30,7 +30,10 @@ char* AppData() {
 		{
 			arr[i] = c;
 		}
-		else break;
+		else {
+			printf("프로그램 종료!\n");
+			break; 
+		}
 	}
 	return arr;
 }
@@ -38,7 +41,7 @@ char* AppData() {
 
 //배열에 값을 출력하는 printArray()함수.
 void printArray(char arr[]) {
-	printf("프로그램 종료! 프로그램 입력 순서는 다음과 같습니다.\n\n");
+	printf("\n프로그램 입력 순서는 다음과 같습니다.\n\n");
 	for (int i = 0; i < NUM; i++)
 	{
 		if (arr[i] != NULL)
