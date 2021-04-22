@@ -41,6 +41,10 @@ void printArray(char arr[]) {
 	printf("프로그램 종료! 프로그램 입력 순서는 다음과 같습니다.\n\n");
 	for (int i = 0; i < NUM; i++)
 	{
-		printf("array[%d] ==> %c\n\n", i, arr[i]);
+		if (arr[i] != NULL)
+		{
+			printf("array[%d] ==> %c\n\n", i, arr[i]);
+		}
+		else break;
 	}
 }
